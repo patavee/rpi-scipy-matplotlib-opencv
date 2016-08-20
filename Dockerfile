@@ -10,17 +10,32 @@ RUN apt-get update && apt-get install -y \
     cmake \
     pkg-config \
 	clang \
+    zlib1g-dev \
 	libjpeg-dev \
+    libwebp-dev \
+    libpng-dev \
 	libtiff5-dev \
 	libjasper-dev \
-	libpng12-dev \
+    libopenexr-dev \
+    libgdal-dev \
+    libdc1394-22-dev \
 	libavcodec-dev \
 	libavformat-dev \
-	libeigen3-dev \
+    libswscale-dev \
+    libtheora-dev \
+    libvorbis-dev \
+    libxvidcore-dev \
+    libx264-dev \
+    yasm \
+    libopencore-amrnb-dev \
+    libopencore-amrwb-dev \
 	libunicap2-dev \
 	libv4l-0 \
 	libv4l-dev \
+    libxine2-dev \
 	v4l-utils \
+    libtbb-dev \
+    libeigen3-dev \
 	&& \
     rm -rf /var/lib/apt/lists/*
 
@@ -40,8 +55,8 @@ RUN cd /tmp && \
         -D CMAKE_BUILD_TYPE=RELEASE \
 	-D BUILD_opencv_python2=YES \
 	-D BUILD_JPEG=YES \
-	-D WITH_WEBP=NO \
-        -D WITH_OPENEXR=NO \ 
+	-D WITH_WEBP=YES \
+        -D WITH_OPENEXR=YES \ 
         -D BUILD_TESTS=NO \
 	-D BUILD_PERF_TESTS=NO \
 	.. && \
