@@ -34,7 +34,6 @@ RUN apt-get update && apt-get install -y \
 	libv4l-dev \
     libxine2-dev \
 	v4l-utils \
-    libtbb-dev \
     libeigen3-dev \
 	&& \
     rm -rf /var/lib/apt/lists/*
